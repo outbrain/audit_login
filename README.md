@@ -38,14 +38,14 @@ When loaded, the plugin generates a log file named audit_login.log under the dat
 
 Fields are:
 
- - ts: local timestamp on MySQL server
- - type: successful_login/failed_login
- - myhost: MySQL server being audited
- - thread: MySQL connection ID
- - user: username attempted as credential
- - priv_user: username assigned by MySQL if successful; empty otherwise
- - host: host from which connection originated
- - ip: IP from which connection originated
+ - **ts**: local timestamp on MySQL server
+ - **type**: successful_login/failed_login
+ - **myhost**: MySQL server being audited
+ - **thread**: MySQL connection ID
+ - **user**: username attempted as credential
+ - **priv_user**: username assigned by MySQL if successful; empty otherwise
+ - **host**: host from which connection originated
+ - **ip**: IP from which connection originated
 
 Each row is a valid JSON object.
 
@@ -82,7 +82,7 @@ bash$ ./configure
 bash$ make
 ```
 
-find result shared library as plugin/audit_login/audit_login.so
+find result shared library as ```plugin/audit_login/audit_login.so```
 
 Use cases
 ---------
