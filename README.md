@@ -19,6 +19,7 @@ Plugin source file is audit_login.c
 
 When loaded, the plugin generates a log file named audit_login.log under the data directory (@@datadir). The following is a sample output:
 
+```JavaScript
 {"ts":"2013-09-11 09:11:47","type":"successful_login","myhost":"gromit03","thread":"3","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
 {"ts":"2013-09-11 09:11:55","type":"failed_login","myhost":"gromit03","thread":"4","user":"msandbox","priv_user":"","host":"localhost","ip":"(null)"}
 {"ts":"2013-09-11 09:11:57","type":"failed_login","myhost":"gromit03","thread":"5","user":"msandbox","priv_user":"","host":"localhost","ip":"(null)"}
@@ -29,18 +30,18 @@ When loaded, the plugin generates a log file named audit_login.log under the dat
 {"ts":"2013-09-11 09:14:09","type":"successful_login","myhost":"gromit03","thread":"6","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
 {"ts":"2013-09-11 10:55:25","type":"successful_login","myhost":"gromit03","thread":"8","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
 {"ts":"2013-09-11 10:55:59","type":"successful_login","myhost":"gromit03","thread":"1","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-
+```
 
 Fields are:
 
-    ts: local timestamp on MySQL server
-    type: successful_login/failed_login
-    myhost: MySQL server being audited
-    thread: MySQL connection ID
-    user: username attempted as credential
-    priv_user: username assigned by MySQL if successful; empty otherwise
-    host: host from which connection originated
-    ip: IP from which connection originated
+ - ts: local timestamp on MySQL server
+ - type: successful_login/failed_login
+ - myhost: MySQL server being audited
+ - thread: MySQL connection ID
+ - user: username attempted as credential
+ - priv_user: username assigned by MySQL if successful; empty otherwise
+ - host: host from which connection originated
+ - ip: IP from which connection originated
 
 Each row is a valid JSON object.
 
