@@ -58,8 +58,10 @@ The plugin supports two ways of configuration:
 
   - via global variables: the plugin supports the simple_login_audit_enabled variable (boolean) which enables/disables logging to file. Use set global simple_login_audit_enabled := 0; for example, to disable the log (default: 1/enabled).
   - via config file: the plugin reads the file audit_login.cnf (if exists) in the data directory. Sample file content:
+        ```
         enabled=1
         skip_users=collectd,nagios
+        ```
     The file is read upon plugin initialization (system startup or INSTALL PLUGIN).
     - enabled takes the values 0/1.
     - skip_users instructs the plugin to avoid logging specific users. list must be comma delimited, no spaces allowed between tokens.
