@@ -1,7 +1,7 @@
 audit_login
 ===========
 
-audit_login is a MySQL plugin developed at Outbrain which audits successful/failed logins to the server.
+**audit_login** is a MySQL plugin developed at Outbrain which audits successful/failed logins to the server.
 
 It is an audit plugin for MySQL. It can be loaded/unloaded as follows:
 
