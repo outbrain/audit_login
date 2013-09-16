@@ -11,7 +11,7 @@ It is an audit plugin for MySQL. It can be loaded/unloaded as follows:
     uninstall plugin SIMPLE_LOGIN_AUDIT;
     ```
 
-  - Statically: in my.cnf, add
+  - Statically: in ```my.cnf```, add
     ```
     plugin_load=audit_login.so
     ```
@@ -57,7 +57,7 @@ Configuration
 The plugin supports two ways of configuration:
 
   - via global variables: the plugin supports the simple_login_audit_enabled variable (boolean) which enables/disables logging to file. Use set global simple_login_audit_enabled := 0; for example, to disable the log (default: 1/enabled).
-  - via config file: the plugin reads the file audit_login.cnf (if exists) in the data directory. Sample file content:
+  - via config file: the plugin reads the file ```audit_login.cnf``` (if exists) in the data directory. Sample file content:
         ```
         enabled=1
         skip_users=collectd,nagios
