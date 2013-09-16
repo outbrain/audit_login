@@ -73,11 +73,13 @@ Compiling plugin
 ----------------
 
 Extract MySQL source distribution
+    ```
     bash$ cd <path-to-extracted-mysql-source>
     bash$ mkdir -p plugin/audit_login/ && cp ~/git/audit_login/*.* plugin/audit_login/
     bash$ sh BUILD/autorun.sh
     bash$ ./configure
     bash$ make
+    ```
 
 find result shared library as plugin/audit_login/audit_login.so
 
