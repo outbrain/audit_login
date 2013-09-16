@@ -1,4 +1,4 @@
 audit_login
 ===========
 
-simple MySQL login audit plugin, logging to text file
+simple MySQL login audit plugin, logging to text file.
