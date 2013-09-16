@@ -48,7 +48,7 @@ Each row is a valid JSON object.
 
 
 Configuration
-=============
+-------------
 
 The plugin supports two ways of configuration:
 
@@ -62,7 +62,7 @@ The plugin supports two ways of configuration:
 
 
 Compiling plugin
-================
+----------------
 
 Extract MySQL source distribution
 bash$ cd <path-to-extracted-mysql-source>
@@ -74,6 +74,7 @@ bash$ make
 find result shared library as plugin/audit_login/audit_login.so
 
 Use cases
+---------
 
 The audit_login.log file is useful in:
 
