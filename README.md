@@ -6,11 +6,15 @@ audit_login is a MySQL plugin developed at Outbrain which audits successful/fail
 It is an audit plugin for MySQL. It can be loaded/unloaded as follows:
 
   - Dynamically:
+    ```
     install plugin SIMPLE_LOGIN_AUDIT soname 'audit_login.so';
     uninstall plugin SIMPLE_LOGIN_AUDIT;
+    ```
 
   - Statically: in my.cnf, add
+    ```
     plugin_load=audit_login.so
+    ```
 
 
 MySQL plugins are shared libraries; compiled against the particular version of the MySQL server. Find appropriate binaries under (TODO)
