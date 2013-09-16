@@ -7,5 +7,5 @@ Released under the GPL (v2) license
 
 Copyright (c) Outbrain
 
-Written by Shlomi Noach
+Written by Shlomi Noach, Outbrain
 
