@@ -78,11 +78,11 @@ Use cases
 
 The audit_login.log file is useful in:
 
-    Detecting failed logins (due to bad passwords)
-    Detecting port-scans (null users)
-    Finding accounts which are never used (users in mysql.user which do not appear on audit log)
-    Counting per-user logins
-    Counting successive failed logins per user
+ - Detecting failed logins (due to bad passwords)
+ - Detecting port-scans (null users)
+ - Finding accounts which are never used (users in mysql.user which do not appear on audit log)
+ - Counting per-user logins
+ - Counting successive failed logins per user
 
 
 
