@@ -17,7 +17,7 @@ When loaded, the plugin generates a log file named **audit_login.log** under the
 {"ts":"2013-09-11 10:55:25","type":"successful_login","myhost":"gromit03","thread":"74153876","user":"web_user","priv_user":"web_user","host":"web-87.localdomain","ip":"10.0.0.87"}
 {"ts":"2013-09-11 10:55:59","type":"successful_login","myhost":"gromit03","thread":"74153877","user":"web_user","priv_user":"web_user","host":"web-12.localdomain","ip":"10.0.0.12"}
 {"ts":"2013-09-11 10:55:59","type":"successful_login","myhost":"gromit03","thread":"74153878","user":"(null)","priv_user":"(null)","host":"(null)","ip":"10.0.0.1"}
-{"ts":"2013-09-11 10:55:59","type":"successful_login","myhost":"gromit03","thread":"74153878","user":"(null)","priv_user":"(null)","host":"(null)","ip":"10.0.0.1"}
+{"ts":"2013-09-11 10:55:59","type":"failed_login","myhost":"gromit03","thread":"74153878","user":"(null)","priv_user":"(null)","host":"(null)","ip":"10.0.0.1"}
 ```
 
 Fields are:
