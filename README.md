@@ -87,7 +87,7 @@ find result shared library as ```plugin/audit_login/audit_login.so```
 Use cases
 ---------
 
-The audit_login.log file is useful in:
+The **audit_login.log** file is useful in:
 
  - Detecting failed logins (due to bad passwords)
  - Detecting port-scans (null users)
@@ -101,7 +101,8 @@ The audit_login.log file is useful in:
 
 Released under the GPL (v2) license
 
-Copyright (c) 2013 Outbrain
+Authored by Shlomi Noach, Outbrain
 
-Written by Shlomi Noach, Outbrain
+Copyright (c) 2013, Outbrain Inc. All rights reserved
+
 
