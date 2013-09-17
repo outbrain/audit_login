@@ -3,37 +3,19 @@ audit_login
 
 **audit_login** is a MySQL plugin developed at [Outbrain](https://github.com/outbrain) which audits successful/failed logins to the server.
 
-It is an audit plugin for MySQL. It can be loaded/unloaded as follows:
-
-  - Dynamically:
-    ```
-    install plugin SIMPLE_LOGIN_AUDIT soname 'audit_login.so';
-    uninstall plugin SIMPLE_LOGIN_AUDIT;
-    ```
-
-  - Statically: in **my.cnf**, add
-    ```
-    plugin_load=audit_login.so
-    ```
-
-
-MySQL plugins are shared libraries; compiled against the particular version of the MySQL server. Find appropriate binaries under (TODO)
-Plugin source file is audit_login.c
-
-
 When loaded, the plugin generates a log file named **audit_login.log** under the data directory (```@@datadir```). The following is a sample output:
 
 ```JavaScript
-{"ts":"2013-09-11 09:11:47","type":"successful_login","myhost":"gromit03","thread":"3","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 09:11:55","type":"failed_login","myhost":"gromit03","thread":"4","user":"msandbox","priv_user":"","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 09:11:57","type":"failed_login","myhost":"gromit03","thread":"5","user":"msandbox","priv_user":"","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 09:12:48","type":"successful_login","myhost":"gromit03","thread":"10","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 09:13:26","type":"successful_login","myhost":"gromit03","thread":"12","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 09:13:44","type":"successful_login","myhost":"gromit03","thread":"1","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 09:13:51","type":"successful_login","myhost":"gromit03","thread":"2","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 09:14:09","type":"successful_login","myhost":"gromit03","thread":"6","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 10:55:25","type":"successful_login","myhost":"gromit03","thread":"8","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
-{"ts":"2013-09-11 10:55:59","type":"successful_login","myhost":"gromit03","thread":"1","user":"msandbox","priv_user":"msandbox","host":"localhost","ip":"(null)"}
+{"ts":"2013-09-11 09:11:47","type":"successful_login","myhost":"gromit03","thread":"74153868","user":"web_user","priv_user":"web_user","host":"web-87.localdomain","ip":"10.0.0.87"}
+{"ts":"2013-09-11 09:11:55","type":"failed_login","myhost":"gromit03","thread":"74153869","user":"backup_user","priv_user":"","host":"web-32","ip":"10.0.0.32"}
+{"ts":"2013-09-11 09:11:57","type":"failed_login","myhost":"gromit03","thread":"74153870","user":"backup_user","priv_user":"","host":"web-32","ip":"10.0.0.32"}
+{"ts":"2013-09-11 09:12:48","type":"successful_login","myhost":"gromit03","thread":"74153871","user":"root","priv_user":"root","host":"localhost","ip":"10.0.0.111"}
+{"ts":"2013-09-11 09:13:26","type":"successful_login","myhost":"gromit03","thread":"74153872","user":"web_user","priv_user":"web_user","host":"web-11.localdomain","ip":"10.0.0.11"}
+{"ts":"2013-09-11 09:13:44","type":"successful_login","myhost":"gromit03","thread":"74153873","user":"web_user","priv_user":"web_user","host":"web-40.localdomain","ip":"10.0.0.40"}
+{"ts":"2013-09-11 09:13:51","type":"successful_login","myhost":"gromit03","thread":"74153874","user":"web_user","priv_user":"web_user","host":"web-03.localdomain","ip":"10.0.0.03"}
+{"ts":"2013-09-11 09:14:09","type":"successful_login","myhost":"gromit03","thread":"74153875","user":"web_user","priv_user":"web_user","host":"web-40.localdomain","ip":"10.0.0.40"}
+{"ts":"2013-09-11 10:55:25","type":"successful_login","myhost":"gromit03","thread":"74153876","user":"web_user","priv_user":"web_user","host":"web-87.localdomain","ip":"10.0.0.87"}
+{"ts":"2013-09-11 10:55:59","type":"successful_login","myhost":"gromit03","thread":"74153877","user":"web_user","priv_user":"web_user","host":"web-12.localdomain","ip":"10.0.0.12"}
 ```
 
 Fields are:
@@ -48,6 +30,27 @@ Fields are:
  - **ip**: IP from which connection originated
 
 Each row is a valid JSON object.
+
+
+Installation
+------------
+
+As an audit plugin for MySQL, it can be loaded/unloaded as follows:
+
+  - Dynamically:
+    ```
+    install plugin SIMPLE_LOGIN_AUDIT soname 'audit_login.so';
+    uninstall plugin SIMPLE_LOGIN_AUDIT;
+    ```
+
+  - Statically: in **my.cnf**, add
+    ```
+    plugin_load=audit_login.so
+    ```
+
+MySQL plugins are shared libraries; compiled against the particular version of the MySQL server. Find appropriate binaries under (TODO)
+Plugin source file is **audit_login.c**
+
 
 
 
@@ -65,8 +68,8 @@ The plugin supports two ways of configuration:
     ```
 
     The file is read upon plugin initialization (system startup or ```INSTALL PLUGIN```).
-    - enabled takes the values 0/1.
-    - skip_users instructs the plugin to avoid logging specific users. list must be comma delimited, no spaces allowed between tokens.
+    - ```enabled``` takes the values **0**/**1**.
+    - ```skip_users``` instructs the plugin to avoid logging specific users. list must be comma delimited, no spaces allowed between tokens.
 
 
 Compiling plugin
