@@ -91,7 +91,6 @@ static int audit_login_plugin_init(void *arg __attribute__((unused))) {
 	char * config_value = NULL;
 	char * config_value_token = NULL;
 
-	plugin_enabled = 1;
 	number_of_successful_logins = 0;
 	number_of_failed_logins = 0;
 	number_of_logouts = 0;
